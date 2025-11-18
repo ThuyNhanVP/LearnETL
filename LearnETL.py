@@ -1,12 +1,15 @@
 import pandas as pd
 
 # Extract: đọc dữ liệu
-titanic_data = pd.read_csv('titanic.csv')
+def Extract_data(filename):
+    return pd.read_csv(filename)
 
 # Transform: xử lý giá trị thiếu ở cột Age
-mean_age = titanic_data['Age'].mean()
-titanic_data['Age'].fillna(mean_age, inplace=True)
-
+def Transform_data(df):
+    titanic_data = df.copy()
+    mean_age = titanic_data['Age'].mean()
+    titanic_data['Age'].fillna(mean_age, inplace=True)
+    return titanic_data
 # Tạo cột nhóm tuổi
 def age_group(age):
     if age < 12:
@@ -17,8 +20,23 @@ def age_group(age):
         return 'Adult'
     else:
         return 'Senior'
-
-titanic_data['AgeGroup'] = titanic_data['Age'].apply(age_group)
+    titanic_data['AgeGroup'] = titanic_data['Age'].apply(age_group)
+    return titanic_data
 
 # Load: lưu dữ liệu ra file mới
-titanic_data.to_csv('titanic_transformed.csv', index=False)
+def load_data(df, filename):
+    df.to_csv(filename, index=False)
+
+# Chạy ETL
+if __name__ == "__main__":
+    # Bước 1: Extract
+    data = Extract_data('titanic.csv')
+    
+    # Bước 2: Transform
+    transformed_data = Transform_data(data)
+    
+    # Bước 3: Load
+    load_data(transformed_data, 'titanic_transformed.csv')
+
+
+
