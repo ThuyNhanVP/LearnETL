@@ -9,6 +9,10 @@ def Transform_data(df):
     titanic_data = df.copy()
     mean_age = titanic_data['Age'].mean()
     titanic_data['Age'].fillna(mean_age, inplace=True)
+    
+    # Áp dụng hàm age_group để tạo cột mới
+    titanic_data['AgeGroup'] = titanic_data['Age'].apply(age_group)
+    
     return titanic_data
 # Tạo cột nhóm tuổi
 def age_group(age):
@@ -20,8 +24,6 @@ def age_group(age):
         return 'Adult'
     else:
         return 'Senior'
-    titanic_data['AgeGroup'] = titanic_data['Age'].apply(age_group)
-    return titanic_data
 
 # Load: lưu dữ liệu ra file mới
 def load_data(df, filename):
