@@ -1,5 +1,5 @@
 # Dự Án ETL Nhỏ
-##Mô tả
+## Mô tả
 Dự án này thực hiện quy trình ETL (Extract - Transform - Load) với dữ liệu dạng CSV. Mục đích là đọc dữ liệu từ file CSV nguồn, xử lý biến đổi dữ liệu theo yêu cầu, sau đó ghi lại dữ liệu đã xử lý ra file CSV mới.
 
 ## Các bước thực hiện
