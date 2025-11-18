@@ -4,11 +4,9 @@
 Dự án này thực hiện quy trình ETL (Extract - Transform - Load) với dữ liệu dạng CSV. Mục đích là đọc dữ liệu từ file CSV nguồn, xử lý biến đổi dữ liệu theo yêu cầu, sau đó ghi lại dữ liệu đã xử lý ra file CSV mới.
 ---
 ## Các bước thực hiện
-** Extract **: Đọc dữ liệu từ file CSV đầu vào.
-
-** Transform **: Thực hiện các bước biến đổi dữ liệu như lọc, chuyển đổi định dạng, tính toán trường mới,...
-
-** Load **: Ghi dữ liệu đã biến đổi ra file CSV đầu ra.
+Extract : Đọc dữ liệu từ file CSV đầu vào.
+Transform : Thực hiện các bước biến đổi dữ liệu như lọc, chuyển đổi định dạng, tính toán trường mới,...
+Load : Ghi dữ liệu đã biến đổi ra file CSV đầu ra.
 ---
 ## Công nghệ sử dụng
 Python (phiên bản 3.x)
